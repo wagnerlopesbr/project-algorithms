@@ -3,7 +3,8 @@ def study_schedule(permanence_period, target_time):  # type: ignore
         return None
 
     if not permanence_period or any(
-        len(period) != 2 or not all(isinstance(time, int) for time in period)  # type: ignore
+        len(period) != 2  # type: ignore
+        or not all(isinstance(t, int) for t in period)  # type: ignore
         for period in permanence_period  # type: ignore
     ):  # type: ignore
         return None
